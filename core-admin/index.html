@@ -23,7 +23,7 @@
                             <div class="col-12">
                                 <img src="assets/img/logo.svg" class="logo" align="reactmore">
                                 <a href="https://codecanyon.net/" target="_blank" class="visit-link">Core
-                                    Admin&nbsp;<span>v1.1.1</span></a>
+                                    Admin&nbsp;<span>v1.0.7</span></a>
                             </div>
                         </div>
 
@@ -44,6 +44,7 @@
                                 <nav class="nav nav-pills flex-column">
                                     <a class="nav-link active" href="#getting_started">Getting Started</a>
                                     <a class="nav-link" href="#introduction">Introduction</a>
+                                    <a class="nav-link" href="#installation">Installation</a>
 
                                 </nav>
                             </div>
@@ -139,6 +140,187 @@
                                     </ul>
                                 </div>
                             </div>
+
+                            <div class="seperator"></div>
+
+                            <div id="installation" class="item-content">
+                                <div class="content-inner">
+                                    <h3 class="title">Installation</h3>
+                                    <div class="alert alert-danger d-flex justify-content-start align-items-center"
+                                        role="alert"><span class="fa fa-info mr-4"></span>
+                                        <p class="m-0">Check your PHP version before start installation. Your PHP
+                                            version should be <strong>7.4 or a higher version.</strong></p>
+                                    </div>
+
+                                    <h5><strong>License Code</strong></h5>
+                                    You need a license code to install the script. You can create this license code with
+                                    your domain name and Envato purchase code.
+                                    Go to our help desk ( <a href="https://reactmore.com/"
+                                        target="_blank">https://reactmore.com/</a>) and create your account on this
+                                    system. Then generate your license code from the Licenses section (<a
+                                        href="https://reactmore.com/admin"
+                                        target="_blank">https://reactmore.com/dashboard</a>).<br>
+                                    If you want to change your domain name in the future, you can change it with the
+                                    "Change Domain" option.
+                                    <br><br><br>
+
+                                    <h5><strong>Follow these steps to install the script:</strong></h5><br>
+
+                                    <strong>1. Create a new Database with user that has all permissions.</strong>
+                                    <ul class="m-t-15">
+                                        <li>Go to cPanel and Click MySQL® Databases</li>
+                                        <li>Create New Database <strong>(ex: core_admin)</strong></li>
+                                        <li>Add New User</li>
+                                        <li>Add User To Database</li>
+                                        <li>Set User Permissions</li>
+                                    </ul>
+                                    <br>
+                                    <strong> 2. Upload script files to your hosting (FTP) or File
+                                        Manager.</strong><br /><br>
+                                    <ol>
+                                        <li> Open your cPanel and go to File Manager section.</li>
+                                        <li>
+                                            Go to root directory of filemanager and Create Folder with example name
+                                            <strong>ci_core</strong>.
+
+
+
+                                        </li>
+
+                                        <figure class="highlight">
+                                            .<br>
+                                            ├── ...<br>
+                                            ├── home<br>
+                                            │ ├── username<br>
+                                            │ │ ├── ci_core <br>
+                                            │ │ │ ├── app<br>
+                                            │ │ │ ├── public <br>
+                                            │ │ │ ├── system<br>
+                                            │ │ │ ├── vendor<br>
+                                            │ │ │ ├── writable<br>
+                                            │ │ │ ├── etc<br>
+                                            │ │ ├── public_html <br>
+                                            │ └── ...<br>
+                                            └── ...<br>
+                                        </figure>
+
+                                        <li>
+                                            Open this ci_core folder and upload
+                                            <strong>codecanyon-core-admin-script.zip</strong> file to this
+                                            folder.
+                                        </li>
+                                        <li>
+                                            Rigth click the .zip file and select <strong>Extract</strong>
+                                            option.
+                                        </li>
+                                        <li>
+                                            Move all files that in the "core-admin-v.." folder to ci_core directory.
+                                        </li>
+                                        <li>
+                                            Delete unnecessary files/folders: "documentation", and
+                                            "codecanyon-core-admin-script.zip".
+                                        </li>
+                                        <li> Two ways for this step
+                                            <ul>
+                                                <li><strong>If your Hosting support terminal:</strong>
+                                                    <ul>
+                                                        <li>Type and enter this code to Symlink Public Folder from
+                                                            ci_core to
+                                                            public_html
+                                                            on terminal (linux)
+
+                                                            <figure class="highlight">
+                                                                ln -s /home/username-cpanel/ci_core/public/*
+                                                                /home/username-cpanel/public_html
+                                                            </figure>
+                                                        </li>
+                                                    </ul>
+
+
+                                                </li>
+                                                <li><strong>If your Hosting not support terminal</strong>
+                                                    <ul>
+                                                        <li>move all file on ci_core/public to public_html manualy</li>
+                                                        <li>Go to public_html and open index.php on text editor</li>
+                                                        <li>
+                                                            Change this line :
+                                                            <figure class="highlight">
+                                                                // Load our paths config file<br>
+                                                                // This is the line that might need to be changed,
+                                                                depending on your
+                                                                folder structure.<br>
+                                                                require FCPATH . '../app/Config/Paths.php';<br>
+                                                                // ^^^ Change this line if you move your application
+                                                                folder<br>
+                                                                //point this line to ci_core folder<br>
+                                                                require FCPATH .
+                                                                '../../ci_core/app/Config/Paths.php';<br>
+                                                            </figure>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+
+                                    <div class="alert alert-warning d-flex justify-content-start align-items-center"
+                                        role="alert"><span class="fa fa-info mr-4"></span>
+                                        <p class="m-0">If you are using NGINX server, .htaccess will not work on
+                                            your server. In this case, you need to make these settings on your
+                                            server: <a
+                                                href="https://codeigniter4.github.io/CodeIgniter4/installation/running.html#hosting-with-nginx"
+                                                target="_blank">NGINX configuration for CodeIgniter</a></p>
+                                    </div>
+
+
+                                    <strong> 3. Open Your browser address bar: http://yourdomain.com/install Click "Find
+                                        License" button and generate your license code if you
+                                        don't have a license code. Enter your license code and then click
+                                        Install</strong><br /><br />
+                                    <img src="assets/images/install/1.jpg" alt="" style="border: 1px solid #eee;">
+                                    <br /><br />
+
+                                    <strong>4. Check system requirements. If one of these extensions is not enabled, you
+                                        must enable it from your server settings. If all requirements are provided,
+                                        click Next.</strong><br><br>
+
+                                    <img src="assets/images/install/2.jpg" alt=""><br /><br>
+                                    <br /><br>
+
+                                    <strong>5. Enter your database credentials. Click Create Database.</strong><br /><br>
+                                    <img src="assets/images/install/3.jpg" alt="">
+                                    <br /><br>
+
+                                    <strong>6. Enter your site URL, admin credentials and your Timezone and click
+                                        finish. Site URL is your complete site address. <br>Some examples:<br></strong>
+                                    Installing to Main directory: <b>https://domain.com</b><br>
+                                    Installing to subdomain: <b>https://sub.domain.com</b><br>
+                                    Installing to folder: <b>https://domain.com/subfolder</b><br><br />
+                                    You need to enter "http" if you don't have SSL on your site. (Example:
+                                    http://domain.com)
+                                    <br /><br>
+                                    <img src="assets/images/install/4.jpg" alt="">
+                                    <br /><br>
+
+                                    <strong>7. Delete the install folder.</strong>
+                                    <br /><br>
+
+                                    <div class="alert alert-danger d-flex justify-content-start align-items-center"
+                                        role="alert"><span class="fa fa-info mr-4"></span>
+                                        <p class="m-0">
+                                            After installation, if you see "404 Not Found" error or if you can not login
+                                            to your site, please check your main directory.
+                                            There should be a .htaccess file. If you don't have this file, none of your
+                                            links will work. You can find this file in the main directory of script
+                                            files.
+                                            Depending on the operating system you are using, such setting files may be
+                                            hidden in your computer. In this case, you may not see this file. You can
+                                            see this file by making the hidden files visible on your computer.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
 
                         </div>
 
