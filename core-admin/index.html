@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Documentation - Core Admin Script</title>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/prism/prism.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body data-spy="scroll" data-target="#mainScrollspy">
+    <div class="page-wrapper toggled light-theme">
+        <div class="container-fluid">
+            <div class="row">
+                <header class="navbar navbar-expand navbar-dark bd-navbar">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="assets/img/logo.svg" class="logo" align="reactmore">
+                                <a href="https://codecanyon.net/" target="_blank" class="visit-link">Core
+                                    Admin&nbsp;<span>v1.1.1</span></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </header>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebar" class="sidebar-wrapper">
+                    <div class="sidebar-content">
+                        <!-- sidebar-menu  -->
+                        <div class="sidebar-item sidebar-menu">
+                            <div id="mainScrollspy">
+                                <p><strong>Documentation</strong></p>
+                                <nav class="nav nav-pills flex-column">
+                                    <a class="nav-link active" href="#getting_started">Getting Started</a>
+                                    <a class="nav-link" href="#introduction">Introduction</a>
+
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- sidebar-menu  -->
+                    </div>
+                </nav>
+                <!-- page-content  -->
+                <main class="page-content">
+                    <div class="container-fluid">
+                        <div class="row row-main">
+                            <div id="getting_started" class="item-content">
+                                <div class="content-inner">
+                                    <h3 class="title">Getting Started</h3>
+                                    <p class="prepend-top append-0">Thank you for purchasing our script. If you have any
+                                        questions that are beyond the scope of this help file, please feel free to
+                                        contact us via
+                                        our <strong><a href="https://reactmore.com/" target="_blank">help
+                                                desk</a></strong>. This is an online help desk for all product from
+                                        reactmore tech. You can
+                                        create your free account and use the system. Thanks so much!</p>
+                                </div>
+                            </div>
+
+                            <div class="seperator"></div>
+
+                            <div id="introduction" class="item-content">
+                                <div class="content-inner">
+                                    <h3 class="title">Introduction</h3>
+                                    <p>
+                                        <strong>Core Admin</strong> is a Appstarter script. It has
+                                        clean, responsive and
+                                        user-friendly design. You can create or build a system without worrying about
+                                        system login/user management, general settings, notications, query builder etc.
+
+                                    </p>
+                                    <strong>Technologies used:</strong>
+                                    <ul>
+                                        <li>
+                                            PHP CodeIgniter 4 Web Framework
+                                        </li>
+                                        <li>
+                                            HTML 5
+                                        </li>
+                                        <li>
+                                            CSS (Bootstrap)
+                                        </li>
+                                        <li>
+                                            JQUERY
+                                        </li>
+                                        <li>
+                                            AJAX
+                                        </li>
+                                    </ul>
+                                    <strong>Key Features:</strong>
+                                    <ul>
+                                        <li>Clean and Responsive Design</li>
+                                        <li>Built Using Bootstrap</li>
+                                        <li>Totally Secure System</li>
+                                        <li>Multilingual System (Database language)</li>
+                                        <li>RTL Support</li>
+                                        <li>Layout Options (Light and Dark Mode)</li>
+                                        <li>Editable & Sortable Lef menu</li>
+                                        <li>Menu Settings</li>
+                                        <li>CRUD modeling</li>
+                                        <li>Installation Wizard</li>
+                                        <li>Detailed Documentation</li>
+                                        <li>Runs on PHP 7.4 and Higher Versions</li>
+                                    </ul>
+                                    <br />
+
+                                    <strong>Security:</strong>
+                                    <br />
+                                    Varient is a secure system. There are various mechanisms to secure application.
+                                    These mechanisms are:
+                                    <ul>
+                                        <li>Cross-Site Request Forgery (CSRF) Prevention</li>
+                                        <li>Cross-Site Scripting (XSS) Prevention</li>
+                                        <li>Password Hashing</li>
+                                        <li>Avoiding SQL Injection</li>
+                                    </ul>
+                                    <br />
+                                    <strong>Requirements:</strong>
+                                    <br />
+                                    There are some requirements for Varient to work on your server. These requirements
+                                    are:
+                                    <ul>
+                                        <li>PHP &gt;= 7.4+</li>
+                                        <li>cURL PHP Extension</li>
+                                        <li>Fileinfo PHP Extension</li>
+                                        <li>Exif PHP Extension</li>
+                                        <li>Mbstring PHP Extension</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </main>
+                <!-- page-content" -->
+            </div>
+        </div>
+
+    </div>
+    <!-- page-wrapper -->
+
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/popper.min.js"></script>
+    <script src="assets/prism/prism.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').scrollspy({ target: "#mainScrollspy", offset: 50 });
+            $("#mainScrollspy a").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
